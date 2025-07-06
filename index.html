@@ -3,231 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9 Content Marketing Principles - A Visual Guide</title>
+    <title>Interactive Guide to Content Marketing Principles</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            background-color: #f0f2f5;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .main-title {
-            text-align: center;
-            color: #1d2129;
-            font-size: 2.8em;
-            margin-bottom: 50px;
-        }
-
-        .principle-card {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            overflow: hidden;
-        }
-
-        .principle-card:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .principle-text {
-            flex: 1;
-        }
-
-        .principle-text h2 {
-            font-size: 2em;
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .principle-text p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #606770;
-        }
-
-        .infographic {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 400px;
-        }
-
-        /* Infographic Styles */
-        .venn-diagram {
-            position: relative; width: 350px; height: 200px;
-        }
-        .venn-diagram .circle {
-            border-radius: 50%;
-            position: absolute;
-        }
-        .venn-diagram .outer {
-            width: 350px; height: 200px; background: #d0e7ff; top: 0; left: 0;
-        }
-        .venn-diagram .specific {
-            width: 120px; height: 80px; background: #ffcdd2; top: 60px; left: 80px;
-        }
-        .venn-diagram .problem {
-            width: 150px; height: 100px; background: #c8e6c9; top: 50px; left: 180px;
-        }
-        .venn-diagram span { position: absolute; font-weight: bold; }
-
-        .unique-content-chart > div { padding: 20px; border-radius: 8px; text-align: center; margin: 10px; flex: 1; color: #fff; }
-
-        .authority-framework { width: 300px; }
-        .authority-framework > div { background: #a5d6a7; padding: 15px; margin-bottom: 10px; border-radius: 8px; text-align: center; font-weight: bold; position: relative; }
-        .authority-framework .personal { background: #c8e6c9; }
-        .authority-framework .offer { background: #e8f5e9; }
-        .authority-framework .seventy-percent { position: absolute; right: -25px; top: 10px; background: #7986cb; color: white; border-radius: 50%; width: 50px; height: 50px; line-height: 50px; }
-
-        .repurpose-flow { display: flex; align-items: center; gap: 20px; }
-        .repurpose-flow .source { background: #c8e6c9; padding: 40px 20px; border-radius: 8px; text-align: center; font-weight: bold; }
-        .repurpose-flow .arrow { font-size: 2em; color: #606770; }
-        .repurpose-flow .outputs > div { background: #e1e1e1; padding: 8px 12px; border-radius: 6px; margin-bottom: 8px; }
-
-        .feedback-loop { display: flex; align-items: center; gap: 15px; }
-        .feedback-loop .circle { background: #d0e7ff; padding: 30px; border-radius: 50%; text-align: center; font-weight: bold; }
-        .feedback-loop .icons { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-
-        .offer-funnel { width: 100%; }
-        .offer-funnel .step { background: #fff; border: 2px solid; border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 10px; font-weight: bold; }
-        .offer-funnel .content { border-color: #42a5f5; }
-        .offer-funnel .front-end { border-color: #9ccc65; }
-        .offer-funnel .middle-end { border-color: #ffee58; }
-        .offer-funnel .back-end { border-color: #ff7043; }
-        .offer-funnel .arrow { text-align: center; font-size: 2em; color: #606770; margin: -5px 0; }
-
-        .timeline { width: 100%; height: 20px; background-color: #ffcdd2; border-radius: 10px; position: relative; }
-        .timeline .results { width: 50%; height: 100%; background-color: #c8e6c9; position: absolute; right: 0; border-radius: 0 10px 10px 0; }
-        .timeline-labels { display: flex; justify-content: space-between; margin-top: 10px; font-weight: bold; }
-
-    </style>
 </head>
 <body>
+    <div class="header">
+        <h1 class="main-title">The Ultimate Guide to Content Marketing</h1>
+        <p class="subtitle">An interactive journey through the 9 core principles of creating content that builds authority and drives results.</p>
+    </div>
+
     <div class="container">
-        <h1 class="main-title">The 9 Principles of High-Impact Content Marketing</h1>
 
         <!-- Principle 1 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>1. Always Start From Your Audience</h2>
-                <p>Effective content isn't about what you want to create; it's about what your audience needs to see. The sweet spot for content is at the intersection of your expertise and your audience's problems.</p>
+                <h2>1. Start With Your Audience</h2>
+                <p>Great content isn't about you, it's about them. Dive deep into your audience's world. Understand their challenges, goals, and questions to create content that resonates and solves real problems.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Interview one customer this week. Ask them "What's the biggest challenge you're facing right now related to [your industry]?"</div>
             </div>
             <div class="infographic">
-                <div class="venn-diagram">
-                    <div class="circle outer"><span style="top: 10px; left: 20px;">Too Broad</span></div>
-                    <div class="circle specific"><span style="top: 30px; left: 20px;">Too Specific</span></div>
-                    <div class="circle problem"><span style="top: 40px; left: 30px;">Audience's Problem</span></div>
-                    <span style="top: 10px; right: 10px; font-size: 1.2em;">Your Content <i class="fas fa-long-arrow-alt-down"></i></span>
-                </div>
+                <canvas id="audience-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 2 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>2. Create Unique Content (Not a Commodity)</h2>
-                <p>Stand out by providing value that can't be found elsewhere. This is achieved through proprietary data, a distinctive point of view, or a unique and polished content style.</p>
+                <h2>2. Create Unique, High-Value Content</h2>
+                <p>Don't just echo what everyone else is saying. Differentiate yourself by sharing proprietary data, offering a unique perspective, or mastering a specific content style. Be the signal, not the noise.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> What is a common industry belief you disagree with? Write a post about your counter-intuitive perspective.</div>
             </div>
-            <div class="infographic" style="display: flex; gap: 10px;">
-                <div style="background: #2e7d32;"><i class="fas fa-chart-bar"></i><br>Insights & Data</div>
-                <div style="background: #0277bd;"><i class="fas fa-eye"></i><br>Point of View</div>
-                <div style="background: #d84315;"><i class="fas fa-paint-brush"></i><br>Style & Craft</div>
+            <div class="infographic">
+                <canvas id="unique-content-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 3 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>3. Focus on Building Authority, Not Fame</h2>
-                <p>Aim for trust and credibility over fleeting metrics like likes and shares. The Authority-First Framework suggests dedicating the majority of your content to establishing expertise in your industry.</p>
+                <h2>3. Build Authority, Not Just Fame</h2>
+                <p>Likes and views are fleeting. Authority is evergreen. Focus on creating expert content that builds trust and positions you as the go-to resource in your niche. This is the foundation of long-term success.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Answer the top 3 questions your sales team gets and turn them into a detailed blog post or video.</div>
             </div>
             <div class="infographic">
-                <div class="authority-framework">
-                    <div class="industry">Industry Content <div class="seventy-percent">70%</div></div>
-                    <div class="personal">Personal Content</div>
-                    <div class="offer">Offer Content</div>
-                </div>
+                <canvas id="authority-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 4 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>4. Don't Publish Bad or Inconsistent Content</h2>
-                <p>Poor content has a negative ROI. It damages your brand's perception and creates 'messaging debt' that is hard to recover from. Quality and consistency are key to maintaining a positive audience perception.</p>
+                <h2>4. Quality & Consistency Over Everything</h2>
+                <p>Bad content is worse than no content. It erodes trust and damages your brand. Set a high quality bar and maintain a consistent publishing schedule to build a loyal, engaged audience.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Define your "minimum viable quality" standard. What are the non-negotiables every piece of content must have before it goes live?</div>
             </div>
             <div class="infographic">
-                <canvas id="perception-chart" width="400" height="250"></canvas>
+                <canvas id="perception-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 5 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>5. Repurpose Your Best Content</h2>
-                <p>Maximize your reach and efficiency by repurposing successful content. A single long-form piece can be transformed into dozens of assets for different platforms, reinforcing your message.</p>
+                <h2>5. Repurpose, Reuse, Recycle</h2>
+                <p>Don't let your great content die after one use. Maximize your efforts by repurposing pillar content into multiple formats for different channels. One webinar can become a dozen assets.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Take your most popular piece of content and brainstorm 5 new ways you can present it (e.g., carousel, short video, checklist, tweet thread).</div>
             </div>
             <div class="infographic">
-                <div class="repurpose-flow">
-                    <div class="source">1 Long-Form<br>Newsletter</div>
-                    <div class="arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                    <div class="outputs">
-                        <div>5 LinkedIn Posts</div>
-                        <div>10 Tweets</div>
-                        <div>1 Video</div>
-                        <div>3 Substack Notes</div>
-                        <div>1 PDF Guide</div>
-                    </div>
-                </div>
+                <canvas id="repurpose-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 6 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>6. Content Extends Your Zone of Influence</h2>
-                <p>High-quality content builds authority and visibility, naturally drawing new prospects to you. It turns you into a magnet for inbound demand as people seek out your expertise.</p>
+                <h2>6. Extend Your Zone of Influence</h2>
+                <p>Great content acts as a magnet, pulling prospects into your orbit. It expands your visibility and authority, creating a powerful inbound engine that brings qualified leads to you.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Collaborate with another expert in a complementary niche for a joint webinar or co-authored article to tap into their audience.</div>
             </div>
             <div class="infographic">
-                 <div style="position: relative; width: 200px; height: 200px;">
-                    <div style="width: 200px; height: 200px; border-radius: 50%; background: #e8f5e9; position: absolute;"></div>
-                    <div style="width: 140px; height: 140px; border-radius: 50%; background: #c8e6c9; position: absolute; top: 30px; left: 30px;"></div>
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: #a5d6a7; position: absolute; top: 60px; left: 60px;"></div>
-                    <i class="fas fa-user" style="position: absolute; top: 85px; left: 90px; font-size: 1.5em; color: #2e7d32;"></i>
-                    <i class="fas fa-user" style="position: absolute; top: 40px; left: 220px; font-size: 1.5em;"></i>
-                    <p style="position: absolute; top: 0; left: 210px; width: 200px;">"I want to know more"</p>
-                </div>
+                <canvas id="influence-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 7 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>7. Install a Continuous Feedback Loop</h2>
-                <p>Use every interaction—comments, DMs, surveys, calls—as an opportunity to gather insights. This direct feedback from your audience is invaluable for refining your content strategy.</p>
+                <h2>7. Create a Feedback Loop</h2>
+                <p>Content should be a conversation, not a monologue. Actively listen to your audience through comments, DMs, surveys, and calls. Use these insights to fuel your content engine with what they truly want.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> End your next piece of content with a specific question to encourage comments and gather direct feedback.</div>
             </div>
             <div class="infographic">
-                <div class="feedback-loop">
-                    <div class="circle">Your Target<br>Audience</div>
-                    <div class="icons">
-                        <i class="fas fa-comments"></i><i class="fas fa-long-arrow-alt-right"></i><i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="circle">Your<br>Content</div>
-                </div>
+                <canvas id="feedback-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
@@ -235,76 +103,30 @@
         <div class="principle-card">
             <div class="principle-text">
                 <h2>8. Build an Easy-Entry Offer</h2>
-                <p>Excellent content can't compensate for a poor offer. Create a logical customer journey, starting with a low-friction front-end offer that converts your audience into clients, then ascending to higher-value back-end offers.</p>
+                <p>Content attracts, but a great offer converts. Create a low-risk, high-value front-end offer to turn your audience into customers. This is the critical first step in your value ladder.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Create a valuable resource (e.g., a comprehensive template, a mini-course) and offer it for a nominal price to convert lurkers into buyers.</div>
             </div>
             <div class="infographic">
-                <div class="offer-funnel">
-                    <div class="step content">Content (in, YT, X)</div>
-                    <div class="arrow">&darr;</div>
-                    <div class="step front-end">Front-End Offer ($1,000)</div>
-                    <div class="arrow">&darr;</div>
-                    <div class="step middle-end">Middle-End Offer ($5,000)</div>
-                    <div class="arrow">&darr;</div>
-                    <div class="step back-end">Back-End Offer ($15,000)</div>
-                </div>
+                <canvas id="offer-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
         <!-- Principle 9 -->
         <div class="principle-card">
             <div class="principle-text">
-                <h2>9. Stay Patient for Significant Results</h2>
-                <p>Content marketing is a long-term game. When executed well with a strong offer, it typically takes about 3 months to see a consistent flow of inbound leads. The initial period is a lagging effect where you build momentum.</p>
+                <h2>9. Be Patient and Persistent</h2>
+                <p>Content marketing is a marathon, not a sprint. It takes time to build momentum and see significant results. Stay consistent, trust the process, and the inbound flow will follow.</p>
+                <div class="action-tip"><strong>Action Tip:</strong> Commit to your content strategy for at least 6 months. Track your progress not just in leads, but in authority-building metrics like keyword rankings and branded search volume.</div>
             </div>
-            <div class="infographic" style="flex-direction: column; align-items: stretch;">
-                <div class="timeline"><div class="results"></div></div>
-                <div class="timeline-labels">
-                    <span>Content Start</span>
-                    <span>First Results</span>
-                    <span>Significant Results</span>
-                </div>
+            <div class="infographic">
+                <canvas id="results-chart" width="400" height="300"></canvas>
             </div>
         </div>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Chart for Principle 4
-        const ctx = document.getElementById('perception-chart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q1', 'Q2'],
-                datasets: [{
-                    label: 'Audience Perception',
-                    data: [70, 85, 55, 40, 20, 35, 45],
-                    borderColor: '#333',
-                    tension: 0.4,
-                    pointBackgroundColor: (context) => (context.raw > 50 ? '#4CAF50' : '#F44336'),
-                    pointRadius: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { min: 0, max: 100, ticks: { display: false } }
-                },
-                annotation: {
-                    annotations: {
-                        line1: {
-                            type: 'line',
-                            yMin: 50,
-                            yMax: 50,
-                            borderColor: 'rgb(255, 99, 132)',
-                            borderWidth: 2,
-                            label: { content: 'Perception Limit', enabled: true, position: 'start' }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
