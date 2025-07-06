@@ -391,9 +391,8 @@
 
     <footer class="footer">
         <div class="social-links">
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
+            
+            <a href="https://www.menaverse.online" aria-label="Website"><i class="fas fa-globe"></i></a>
         </div>
         <p>&copy; 2025 Menaverse. All Rights Reserved.</p>
     </footer>
@@ -544,6 +543,63 @@
                     options: {
                         scales: { x: { stacked: true }, y: { stacked: true } },
                         plugins: { title: { display: true, text: 'Content Repurposing Yield' } }
+                    }
+                });
+            }
+
+            // 6. Influence Chart
+            const ctxInfluence = document.getElementById('influence-chart')?.getContext('2d');
+            if (ctxInfluence) {
+                new Chart(ctxInfluence, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Organic Search', 'Social Media', 'Referrals', 'Direct'],
+                        datasets: [{
+                            data: [40, 25, 15, 20],
+                            backgroundColor: ['#0a4c9a', '#00a9e0', '#f39c12', '#27ae60']
+                        }]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Zone of Influence Growth' } }
+                    }
+                });
+            }
+
+            // 7. Feedback Chart
+            const ctxFeedback = document.getElementById('feedback-chart')?.getContext('2d');
+            if (ctxFeedback) {
+                new Chart(ctxFeedback, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Comments', 'DMs', 'Surveys', 'Calls'],
+                        datasets: [{
+                            label: 'Feedback Channels',
+                            data: [70, 50, 80, 30],
+                            backgroundColor: 'rgba(0, 169, 224, 0.7)',
+                            borderColor: '#00a9e0',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Continuous Feedback Loop' } }
+                    }
+                });
+            }
+
+            // 8. Offer Chart
+            const ctxOffer = document.getElementById('offer-chart')?.getContext('2d');
+            if (ctxOffer) {
+                new Chart(ctxOffer, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Front-End', 'Middle-End', 'Back-End'],
+                        datasets: [
+                            { label: 'Audience Conversion', data: [60, 30, 10], backgroundColor: ['#27ae60', '#f39c12', '#dc3545'] }
+                        ]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        plugins: { title: { display: true, text: 'Easy-Entry Offer Funnel' } }
                     }
                 });
             }
