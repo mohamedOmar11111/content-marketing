@@ -7,8 +7,256 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- General Styles & Variables --- */
+        :root {
+            --primary-color: #0a4c9a;
+            --secondary-color: #00a9e0;
+            --dark-color: #2c3e50;
+            --light-color: #f4f7f9;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --white-color: #ffffff;
+            --gray-color: #5d6d7e;
+            --light-gray-color: #eaedf1;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--light-gray-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--white-color);
+        }
+
+        .main-title {
+            font-size: 3.8em;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray-color);
+        }
+
+        /* --- Principle Card --- */
+        .principle-card {
+            background-color: var(--white-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 80px 0;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 50px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .principle-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .principle-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .principle-text {
+            flex: 1.2;
+        }
+
+        .principle-text h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .principle-text p {
+            font-size: 1.15em;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .action-tip {
+            background-color: #e6f7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            font-size: 1.1em;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .action-tip strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .infographic {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-gray-color);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer .social-links a {
+            color: var(--white-color);
+            font-size: 1.8em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- Back to Top Button --- */
+        #to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateY(20px);
+        }
+
+        #to-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .nav-menu { display: none; } /* Simple responsive nav for this example */
+            .principle-card {
+                flex-direction: column !important;
+                padding: 40px 30px;
+            }
+            .infographic { min-height: auto; width: 100%; margin-top: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.8em; }
+            .subtitle { font-size: 1.2em; }
+            .principle-text h2 { font-size: 2.2em; }
+        }
+    </style>
 </head>
 <body>
 
@@ -154,6 +402,174 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Navbar Scroll Effect ---
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // --- Back to Top Button ---
+            const toTopBtn = document.getElementById('to-top-btn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    toTopBtn.classList.add('show');
+                } else {
+                    toTopBtn.classList.remove('show');
+                }
+            });
+            toTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Intersection Observer for Card Animations ---
+            const cards = document.querySelectorAll('.principle-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // --- Chart.js Global Config ---
+            Chart.defaults.font.family = 'Poppins';
+            Chart.defaults.font.size = 14;
+            Chart.defaults.color = '#5d6d7e';
+            Chart.defaults.plugins.legend.position = 'bottom';
+            Chart.defaults.plugins.title.font = { size: 20, weight: 'bold' };
+            Chart.defaults.plugins.title.color = '#2c3e50';
+
+            // --- Chart Implementations ---
+
+            // 1. Audience Chart
+            const ctxAudience = document.getElementById('audience-chart')?.getContext('2d');
+            if (ctxAudience) {
+                new Chart(ctxAudience, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Pain Points', 'Goals', 'Questions', 'Interests'],
+                        datasets: [{
+                            label: 'Audience Understanding',
+                            data: [90, 75, 85, 60],
+                            backgroundColor: 'rgba(10, 76, 154, 0.7)',
+                            borderColor: '#0a4c9a',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Deep Audience Understanding' } }
+                    }
+                });
+            }
+
+            // 2. Unique Content Chart
+            const ctxUnique = document.getElementById('unique-content-chart')?.getContext('2d');
+            if (ctxUnique) {
+                new Chart(ctxUnique, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Proprietary Data', 'Unique Viewpoint', 'Signature Style'],
+                        datasets: [{ data: [40, 35, 25], backgroundColor: ['#0a4c9a', '#00a9e0', '#f39c12'] }]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Pillars of Unique Content' } }
+                    }
+                });
+            }
+
+            // 3. Authority Chart
+            const ctxAuthority = document.getElementById('authority-chart')?.getContext('2d');
+            if (ctxAuthority) {
+                new Chart(ctxAuthority, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Trust', 'Credibility', 'Expertise', 'Influence', 'Recognition'],
+                        datasets: [{
+                            label: 'Authority Score',
+                            data: [80, 85, 90, 70, 75],
+                            backgroundColor: 'rgba(10, 76, 154, 0.2)',
+                            borderColor: '#0a4c9a',
+                            pointBackgroundColor: '#0a4c9a'
+                        }]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Authority-Building Metrics' } }
+                    }
+                });
+            }
+
+            // 4. Perception Chart
+            const ctxPerception = document.getElementById('perception-chart')?.getContext('2d');
+            if (ctxPerception) {
+                new Chart(ctxPerception, {
+                    type: 'line',
+                    data: {
+                        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                        datasets: [
+                            { label: 'High Quality', data: [60, 70, 85, 95], borderColor: '#27ae60', tension: 0.4 },
+                            { label: 'Low Quality', data: [50, 40, 30, 20], borderColor: '#dc3545', tension: 0.4 }
+                        ]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'Impact of Content Quality on Brand Perception' } }
+                    }
+                });
+            }
+
+            // 5. Repurpose Chart
+            const ctxRepurpose = document.getElementById('repurpose-chart')?.getContext('2d');
+            if (ctxRepurpose) {
+                new Chart(ctxRepurpose, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Pillar Page', 'Webinar', 'Case Study'],
+                        datasets: [
+                            { label: 'Social Posts', data: [15, 20, 10], backgroundColor: '#0a4c9a' },
+                            { label: 'Videos', data: [3, 5, 2], backgroundColor: '#00a9e0' },
+                            { label: 'Guides/PDFs', data: [2, 1, 1], backgroundColor: '#f39c12' }
+                        ]
+                    },
+                    options: {
+                        scales: { x: { stacked: true }, y: { stacked: true } },
+                        plugins: { title: { display: true, text: 'Content Repurposing Yield' } }
+                    }
+                });
+            }
+
+            // 9. Results Chart
+            const ctxResults = document.getElementById('results-chart')?.getContext('2d');
+            if (ctxResults) {
+                new Chart(ctxResults, {
+                    type: 'line',
+                    data: {
+                        labels: ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'],
+                        datasets: [
+                            { label: 'Effort (Content Published)', data: [10, 12, 11, 13, 12, 14, 13, 15, 14], borderColor: '#f39c12', fill: false, yAxisID: 'y1' },
+                            { label: 'Results (Inbound Leads)', data: [2, 5, 8, 15, 25, 40, 65, 90, 120], borderColor: '#27ae60', backgroundColor: 'rgba(39, 174, 96, 0.1)', fill: true, yAxisID: 'y' }
+                        ]
+                    },
+                    options: {
+                        plugins: { title: { display: true, text: 'The Lagging Effect of Content Marketing' } },
+                        scales: {
+                            y: { position: 'left', title: { display: true, text: 'Leads' } },
+                            y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Effort' } }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
