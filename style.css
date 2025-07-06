@@ -1,22 +1,27 @@
 /* --- General Styles & Variables --- */
 :root {
-    --primary-color: #0056b3;
-    --secondary-color: #17a2b8;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
+    --primary-color: #0a4c9a;
+    --secondary-color: #00a9e0;
+    --dark-color: #2c3e50;
+    --light-color: #f4f7f9;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
     --white-color: #ffffff;
-    --gray-color: #6c757d;
+    --gray-color: #5d6d7e;
+    --light-gray-color: #eaedf1;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: var(--light-color);
     color: var(--dark-color);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .container {
@@ -25,54 +30,115 @@ body {
     padding: 0 20px;
 }
 
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--light-gray-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+}
+
 /* --- Header --- */
 .header {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--white-color);
-    border-bottom-left-radius: 50% 20px;
-    border-bottom-right-radius: 50% 20px;
-    margin-bottom: 60px;
+    padding: 60px 20px;
+    background-color: var(--white-color);
 }
 
 .main-title {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    font-weight: 900;
-    letter-spacing: -1px;
+    font-size: 3.8em;
+    font-weight: 800;
+    color: var(--dark-color);
+    margin-bottom: 15px;
 }
 
 .subtitle {
-    font-size: 1.5em;
+    font-size: 1.4em;
     max-width: 800px;
     margin: 0 auto;
-    opacity: 0.9;
+    color: var(--gray-color);
 }
 
 /* --- Principle Card --- */
 .principle-card {
     background-color: var(--white-color);
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    margin-bottom: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 80px 0;
     display: flex;
     align-items: center;
-    gap: 40px;
-    padding: 40px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 50px;
+    padding: 50px;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .principle-card.is-visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.principle-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
 }
 
 .principle-card:nth-child(even) {
@@ -84,30 +150,31 @@ body {
 }
 
 .principle-text h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: 700;
     color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 20px;
-    font-weight: 700;
 }
 
 .principle-text p {
-    font-size: 1.2em;
+    font-size: 1.15em;
     color: var(--gray-color);
+    margin-bottom: 20px;
 }
 
 .action-tip {
-    background-color: #e9f7ef;
+    background-color: #e6f7ff;
     border-radius: 8px;
     padding: 20px;
     margin-top: 25px;
     font-size: 1.1em;
-    border-left: 5px solid var(--success-color);
+    border-left: 5px solid var(--secondary-color);
 }
 
 .action-tip strong {
-    color: var(--success-color);
-    font-weight: 700;
+    color: var(--secondary-color);
+    font-weight: 600;
 }
 
 .infographic {
@@ -115,20 +182,66 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 400px;
+    min-height: 350px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-gray-color);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.footer .social-links a {
+    color: var(--white-color);
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Back to Top Button --- */
+#to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    transform: translateY(20px);
+}
+
+#to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
+    .nav-menu { display: none; } /* Simple responsive nav for this example */
     .principle-card {
         flex-direction: column !important;
-        padding: 30px;
+        padding: 40px 30px;
     }
-    .infographic { min-width: 0; width: 100%; margin-top: 30px; }
+    .infographic { min-height: auto; width: 100%; margin-top: 40px; }
 }
 
 @media (max-width: 768px) {
-    .main-title { font-size: 2.5em; }
+    .main-title { font-size: 2.8em; }
     .subtitle { font-size: 1.2em; }
-    .principle-text h2 { font-size: 2em; }
+    .principle-text h2 { font-size: 2.2em; }
 }
